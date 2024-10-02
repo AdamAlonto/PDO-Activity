@@ -54,18 +54,14 @@ CREATE TABLE Session (
     ComputerID INT,
     EmployeeID INT,
     StartTime DATETIME,
-    EndTime DATETIME,
-    FOREIGN KEY (CustomerID) REFERENCES Customer(CustomerID),
-    FOREIGN KEY (ComputerID) REFERENCES Computer(ComputerID),
-    FOREIGN KEY (EmployeeID) REFERENCES Employee(EmployeeID)
+    EndTime DATETIME
 );
 
 CREATE TABLE Payment (
     PaymentID INT PRIMARY KEY,
     SessionID INT,
     Amount DECIMAL(10, 2),
-    PaymentTime DATETIME,
-    FOREIGN KEY (SessionID) REFERENCES Session(SessionID)
+    PaymentTime DATETIME
 );
 
 CREATE TABLE Employee (
